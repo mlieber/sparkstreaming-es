@@ -1,0 +1,14 @@
+  [144]: https://github.com/sbt/sbt-assembly/pull/144
+  [145]: https://github.com/sbt/sbt-assembly/pull/145
+  [@jeffreyolchovy]: https://github.com/jeffreyolchovy
+  [@catap]: https://github.com/catap
+
+### Accumulate errors during merge
+
+sbt-assembly 0.13.0 now accumulates merge conflict errors and displays them all.
+
+[#144][144] by [@jeffreyolchovy][@jeffreyolchovy].
+
+### Improvements
+
+- `META-INF/mailcap`, `META-INF/mimetypes.default`, and `META-INF/maven/` are discarded by default. [#145][145] by [@catap][@catap]

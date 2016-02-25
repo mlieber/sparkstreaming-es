@@ -1,0 +1,17 @@
+  [1]: https://code.google.com/archive/p/jarjar/
+  [162]: https://github.com/sbt/sbt-assembly/pull/162
+  [165]: https://github.com/sbt/sbt-assembly/pull/165
+  [@wxiang7]: https://github.com/wxiang7
+  [@eed3si9n]: https://github.com/eed3si9n
+
+### shading
+
+sbt-assembly 0.14.0 adds shading support backed by [Jar Jar Links][1].
+
+    assemblyShadeRules in assembly := Seq(
+      ShadeRule.rename("org.apache.commons.io.**" -> "shadeio.@1").inAll
+    )
+
+The above rule renames all classes in `org.apache.commons.io` to the `shadeio` package by bytecode transformation, including the references to them. For more details see [Shading](https://github.com/sbt/sbt-assembly#shading).
+
+This feature was contributed as [#162][162] by [@wxiang7][@wxiang7], and was further improved in [#165][165] by [@eed3si9n][@eed3si9n].

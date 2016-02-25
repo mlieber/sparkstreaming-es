@@ -1,0 +1,14 @@
+  [103]: https://github.com/sbt/sbt-assembly/issues/103
+  [104]: https://github.com/sbt/sbt-assembly/issues/104
+  [107]: https://github.com/sbt/sbt-assembly/pull/107
+  [@analytically]: https://github.com/analytically
+  [@maliqq]: https://github.com/maliqq
+
+### MergeStrategy.concat change
+
+`MergeStrategy.concat` will now append newline if the file terminates without it.
+This is to work around Play Framework's `reference.conf` not containing newline at the end of the file. [#104][104], [#107][107] contributed by [@analytically][@analytically]
+
+### assemblyPackageDependency fix
+
+`assemblyPackageDependency` will now exclude internal dependencies from the fat JAR. By default it was already excluded from the JAR; however, when `exportJars := true` internal dependencies acted a JAR and was included as part of the resulting JAR prior to this release. Starting 0.11.0, `assemblyPackageDependency` will contain only the class files from external dependencies. [#103][103] reported by [@maliqq][@maliqq]

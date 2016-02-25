@@ -1,0 +1,16 @@
+## minor enhancements and bug fixes
+
+- Fixes Windows path handling. This was contributed by [@stejsks][@stejsks]
+
+Now you can pattern match file paths to merge conflicting files at your own risk:
+
+    mergeStrategy in assembly <<= (mergeStrategy in assembly) { (old) =>
+      {
+        case PathList("javax", "servlet", xs @ _*) => MergeStrategy.first
+        case "application.conf" => MergeStrategy.concat
+        case "unwanted.txt"     => MergeStrategy.discard
+        case x => old(x)
+      }
+    }
+
+  [@stejsks]: https://github.com/stejsks

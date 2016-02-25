@@ -1,0 +1,7 @@
+  [@harrah]: https://github.com/harrah
+  [108]: https://github.com/sbt/sbt-assembly/pull/108
+  [1153]: https://github.com/sbt/sbt/pull/1153
+
+### Performance improvements
+
+[Mark Harrah][@harrah] contributed a performance improvement for sbt-assembly. [#108][108] The change would be more noticible when you're dealing with lots of files. Related [sbt/sbt#1153][1153].

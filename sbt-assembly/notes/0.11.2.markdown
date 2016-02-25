@@ -1,0 +1,6 @@
+  [@iron9light]: https://github.com/iron9light
+  [110]: https://github.com/sbt/sbt-assembly/issues/110
+
+### bug fix
+
+- fixes `PathList` on Windows that was broken in the previous release 0.11.1 [#110][110] reported by [@iron9light][@iron9light]

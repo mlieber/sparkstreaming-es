@@ -1,0 +1,15 @@
+  [116]: https://github.com/sbt/sbt-assembly/issues/116
+  [125]: https://github.com/sbt/sbt-assembly/pull/125
+  [123]: https://github.com/sbt/sbt-assembly/issues/123
+  [@romovpa]: https://github.com/romovpa
+
+### auto plugin
+
+sbt-assembly 0.12.0 became an auto plugin that requires sbt 0.13.5+.
+See [migration guide](https://github.com/sbt/sbt-assembly/blob/master/Migration.md) for details.
+
+### enhancements and bug fixes
+
+- `META-INF/*.rsa` files are discarded by default. [#125][125] by [@romovpa][@romovpa]
+- Fixes `includeScala = false` excluding scala-logging. [#116][116]
+- Fixes OS junk file `.DS_Store` causing duplicate error. [#123][123]

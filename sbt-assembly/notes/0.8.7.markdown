@@ -1,0 +1,9 @@
+### enhancements and bug fixes
+
+- a part of the assemblying process is parallelized for some speedup, contributed by [@emchristiansen][@emchristiansen] as [#73][73].
+- sbt-assembly now outputs fat jars into `crossTarget` (`target/scala_X.X/`) instead of `target` (`target/`). [#70][70] reported by [@maddogg14524][@maddogg14524]
+
+  [@emchristiansen]: https://github.com/emchristiansen
+  [@maddogg14524]: https://github.com/maddogg14524
+  [70]: https://github.com/sbt/sbt-assembly/issues/70
+  [73]: https://github.com/sbt/sbt-assembly/pull/73

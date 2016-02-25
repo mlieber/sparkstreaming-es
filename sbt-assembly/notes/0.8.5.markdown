@@ -1,0 +1,5 @@
+## minor enhancements and bug fixes
+
+- Starting 0.8.5, `assembly` task will skip building jar file if none of the input contents have changed. [#59][59]
+
+  [59]: https://github.com/sbt/sbt-assembly/issues/59
