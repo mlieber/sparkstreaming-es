@@ -27,18 +27,15 @@ Once the data file has been fully ingested, it is parsed and filtered according 
 The data from the file is first stored in an index / table, under the name ‘trialrecord’. This essentially holds the raw data from the data file, so as to be searched or retrieved later. 
 
 
- ##Choice of technology
-Elasticsearch
 
-Overview
+# ElasticSearch
 Elasticsearch is a flexible and powerful open source distributed real-time search and analytics engine designed from the ground up to be distributed and scalable. Data in Elasticsearch is stored as structured JSON documents.  All fields are indexed by default, and all the indices can be used in a single query. Elasticsearch by default is schema-less; it will try to detect the data structure within a JSON document to index the data and make it searchable. In our design a schema is provided for added robustness.
 Elasticsearch clusters are resilient – they will detect and remove failed nodes, and reorganize themselves automatically.
 
 
 
-## Spark
+# Spark
 
-Overview
 Apache Spark is an open source cluster-computing framework. Spark’s in-memory primitives provide high performance for data batch processing applications. Spark Streaming is a sub-project of Apache Spark. 
 Spark Streaming is a real-time processing tool that runs on top of the Spark engine. In Spark Streaming, batches of Resilient Distributed Datasets (RDDs) are passed to Spark Streaming, which processes these batches using the Spark Engine and returns a processed stream of batches. Spark Streaming allows stateful computations—maintaining a state based on data coming in a stream.
 
@@ -52,9 +49,12 @@ make sure to clean up the ES index: curl -XDELETE 'http://localhost:9200/sensorp
 
 Run :
 
-spark-1.6.0-bin-hadoop2.6/bin/spark-submit --jars /Users/mlieber/app/elasticsearch-1.7.2/lib/elasticsearch-1.7.2.jar,/Users/mlieber/app/spark-streaming_2.11-1.6.0.jar,/Users/mlieber/app/elasticsearch-hadoop-2.1.1/dist/elasticsearch-hadoop-2.1.1.jar   --master local[4] --class "SparkProcessing"    ./target/scala-2.10/stream-test_2.10-1.0.jar 
+spark-1.6.0-bin-hadoop2.6/bin/spark-submit --jars
+
+/Users/mlieber/app/elasticsearch-1.7.2/lib/elasticsearch-1.7.2.jar,/Users/mlieber/app/spark-streaming_2.11-1.6.0.jar,/Users/mlieber/app/elasticsearch-hadoop-2.1.1/dist/elasticsearch-hadoop-2.1.1.jar   --master local[4] --class "SparkProcessing"    ./target/scala-2.10/stream-test_2.10-1.0.jar 
 
 Once the context is showing in the log, add the data:
+
 cp CV205-005_20150914.DAT ../data
 
 
